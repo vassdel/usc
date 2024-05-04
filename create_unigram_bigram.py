@@ -21,4 +21,5 @@ files = ['dev', 'train','test']
 for file in files:
     create_ilm(file)
 
-create_lm_phone('train')
+for file in files:
+    create_lm_phone(file)
