@@ -1,0 +1,1 @@
+/home/vassdel/kaldi/egs/wsj/s5/steps/score_kaldi.sh
