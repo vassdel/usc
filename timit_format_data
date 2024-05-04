@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Copyright 2013  (Author: Daniel Povey)
 # Apache 2.0
@@ -10,26 +10,29 @@
 . ./path.sh || exit 1;
 
 echo "Preparing train, dev and test data"
-srcdir=data/local/data
 lmdir=data/local/nist_lm
 tmpdir=data/local/lm_tmp
 lexicon=data/local/dict/lexicon.txt
 mkdir -p $tmpdir
 
+for x in train dev test; do
+  utils/validate_data_dir.sh --no-feats data/$x || exit 1
+done
+
 # Next, for each type of language model, create the corresponding FST
 # and the corresponding lang_test_* directory.
 
-echo "Preparing language models for test"
+echo Preparing language models for test
 
-for x in train dev test; do
-  test=data/lang_test
-  mkdir -p $test
-  cp -r data/lang/* $test
+for lm_suffix in ug bg; do
+  outlang=data/lang_phones_${lm_suffix}
+  mkdir -p $outlang
+  cp -r data/lang/* $outlang
 
-  gunzip -c $lmdir/lm_${x}_unigram.arpa.gz | \
+  gunzip -c $lmdir/lm_phone_${lm_suffix}.arpa.gz | \
     arpa2fst --disambig-symbol=#0 \
-             --read-symbol-table=$test/words.txt - data/lang_test/G_${x}_unigram.fst
-done
+             --read-symbol-table=$outlang/words.txt - $outlang/G.fst
+  fstisstochastic $outlang/G.fst
  # The output is like:
  # 9.14233e-05 -0.259833
  # we do expect the first of these 2 numbers to be close to zero (the second is
@@ -41,14 +44,18 @@ done
  # Checking that G has no cycles with empty words on them (e.g. <s>, </s>);
  # this might cause determinization failure of CLG.
  # #0 is treated as an empty word.
- for x in train dev test; do
-   test=data/lang_test
+  mkdir -p $tmpdir/g
+  awk '{if(NF==1){ printf("0 0 %s %s\n", $1,$1); }} END{print "0 0 #0 #0"; print "0";}' \
+    < "$lexicon"  >$tmpdir/g/select_empty.fst.txt
+  fstcompile --isymbols=$outlang/words.txt --osymbols=$outlang/words.txt $tmpdir/g/select_empty.fst.txt | \
+   fstarcsort --sort_type=olabel | fstcompose - $outlang/G.fst > $tmpdir/g/empty_words.fst
+  fstinfo $tmpdir/g/empty_words.fst | grep cyclic | grep -w 'y' &&
+    echo "Language model has cycles with empty words" && exit 1
+  rm -r $tmpdir/g
 
-   gunzip -c $lmdir/lm_${x}_bigram.arpa.gz | \
-     arpa2fst --disambig-symbol=#0 \
-              --read-symbol-table=$test/words.txt - data/lang_test/G_${x}_bigram.fst
+  utils/validate_lang.pl $outlang || exit 1
 done
 
-# utils/validate_lang.pl data/lang_test_bg || exit 1
 
 echo "Succeeded in formatting data."
+rm -r $tmpdir
