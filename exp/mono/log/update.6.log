@@ -1,5 +1,5 @@
 # gmm-est --write-occs=exp/mono/7.occs --mix-up=270 --power=0.25 exp/mono/6.mdl "gmm-sum-accs - exp/mono/6.*.acc|" exp/mono/7.mdl 
-# Started at Sun May  5 02:11:42 EEST 2024
+# Started at Sun May  5 04:35:03 EEST 2024
 #
 gmm-est --write-occs=exp/mono/7.occs --mix-up=270 --power=0.25 exp/mono/6.mdl 'gmm-sum-accs - exp/mono/6.*.acc|' exp/mono/7.mdl 
 gmm-sum-accs - exp/mono/6.1.acc exp/mono/6.2.acc exp/mono/6.3.acc exp/mono/6.4.acc 
@@ -16,4 +16,4 @@ LOG (gmm-est[5.5.1126~1-8c451]:main():gmm-est.cc:116) GMM update: Overall avg li
 LOG (gmm-est[5.5.1126~1-8c451]:SplitByCount():am-diag-gmm.cc:116) Split 125 states with target = 270, power = 0.25, perturb_factor = 0.01 and min_count = 20, split #Gauss from 241 to 270
 LOG (gmm-est[5.5.1126~1-8c451]:main():gmm-est.cc:146) Written model to exp/mono/7.mdl
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sun May  5 02:11:42 EEST 2024, elapsed time 0 seconds
+# Ended (code 0) at Sun May  5 04:35:03 EEST 2024, elapsed time 0 seconds

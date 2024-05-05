@@ -1,8 +1,8 @@
 # compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.4 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.4.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.4 --compress=true ark:- ark,scp:/home/vassdel/kaldi/egs/usc/mfcc_train/raw_mfcc_train.4.ark,/home/vassdel/kaldi/egs/usc/mfcc_train/raw_mfcc_train.4.scp 
-# Started at Sun May  5 01:56:03 EEST 2024
+# Started at Sun May  5 04:32:43 EEST 2024
 #
-compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.4 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.4.scp ark:- 
 copy-feats --write-num-frames=ark,t:exp/make_mfcc/train/utt2num_frames.4 --compress=true ark:- ark,scp:/home/vassdel/kaldi/egs/usc/mfcc_train/raw_mfcc_train.4.ark,/home/vassdel/kaldi/egs/usc/mfcc_train/raw_mfcc_train.4.scp 
+compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/train/utt2dur.4 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/train/wav_train.4.scp ark:- 
 VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) Processed features for key m3_004
 VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) Processed features for key m3_005
 VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) Processed features for key m3_007
@@ -368,5 +368,5 @@ LOG (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:181) Proc
 VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) Processed features for key m3_460
 LOG (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:185)  Done 330 out of 330 utterances.
 LOG (copy-feats[5.5.1126~1-8c451]:main():copy-feats.cc:143) Copied 330 feature matrices.
-# Accounting: time=9 threads=1
-# Ended (code 0) at Sun May  5 01:56:12 EEST 2024, elapsed time 9 seconds
+# Accounting: time=10 threads=1
+# Ended (code 0) at Sun May  5 04:32:53 EEST 2024, elapsed time 10 seconds

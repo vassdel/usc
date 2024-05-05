@@ -1,5 +1,5 @@
 # compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/test/utt2dur.4 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.4.scp ark:- | copy-feats --write-num-frames=ark,t:exp/make_mfcc/test/utt2num_frames.4 --compress=true ark:- ark,scp:/home/vassdel/kaldi/egs/usc/mfcc_test/raw_mfcc_test.4.ark,/home/vassdel/kaldi/egs/usc/mfcc_test/raw_mfcc_test.4.scp 
-# Started at Sun May  5 01:55:59 EEST 2024
+# Started at Sun May  5 04:32:38 EEST 2024
 #
 copy-feats --write-num-frames=ark,t:exp/make_mfcc/test/utt2num_frames.4 --compress=true ark:- ark,scp:/home/vassdel/kaldi/egs/usc/mfcc_test/raw_mfcc_test.4.ark,/home/vassdel/kaldi/egs/usc/mfcc_test/raw_mfcc_test.4.scp 
 compute-mfcc-feats --write-utt2dur=ark,t:exp/make_mfcc/test/utt2dur.4 --verbose=2 --config=conf/mfcc.conf scp,p:exp/make_mfcc/test/wav_test.4.scp ark:- 
@@ -105,5 +105,5 @@ VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) 
 VLOG[2] (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:182) Processed features for key m3_456
 LOG (compute-mfcc-feats[5.5.1126~1-8c451]:main():compute-mfcc-feats.cc:185)  Done 91 out of 91 utterances.
 LOG (copy-feats[5.5.1126~1-8c451]:main():copy-feats.cc:143) Copied 91 feature matrices.
-# Accounting: time=2 threads=1
-# Ended (code 0) at Sun May  5 01:56:01 EEST 2024, elapsed time 2 seconds
+# Accounting: time=3 threads=1
+# Ended (code 0) at Sun May  5 04:32:41 EEST 2024, elapsed time 3 seconds

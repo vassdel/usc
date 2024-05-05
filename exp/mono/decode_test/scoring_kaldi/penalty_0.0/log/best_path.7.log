@@ -1,0 +1,10 @@
+# lattice-scale --inv-acoustic-scale=7 "ark:gunzip -c ./exp/mono/decode_test//lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=./data/lang/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- ./data/lang/words.txt | cat > ./exp/mono/decode_test//scoring_kaldi/penalty_0.0/7.txt 
+# Started at Sun May  5 05:08:26 EEST 2024
+#
+lattice-best-path --word-symbol-table=./data/lang/words.txt ark:- ark,t:- 
+lattice-scale --inv-acoustic-scale=7 'ark:gunzip -c ./exp/mono/decode_test//lat.*.gz|' ark:- 
+lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- 
+LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:99) For utterance f1_001, best cost 71.0165 + 2821.05 = 2892.07 over 237 frames.
+f1_001 sil dh ih s ih z iy s iy f r aa s 
+LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:99) For utterance f1_006, best cost 104.418 + 4017.54 = 4121.96 over 338 frames.
+f1_006 w ay iy l aw w r iy ah b er s ih l iy ay t ah n z 

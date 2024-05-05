@@ -1,0 +1,8 @@
+# Calculating perplexity for the unigram model of the dev set #
+%% Nw=5098 PP=39.94 PPwp=0.00 Nbo=0 Noov=0 OOV=0.00%
+# Calculating perplexity for the bigram model of the dev set #
+%% Nw=5098 PP=14.89 PPwp=0.00 Nbo=147 Noov=0 OOV=0.00%
+# Calculating perplexity for the unigram model of the test set #
+%% Nw=13198 PP=40.23 PPwp=0.00 Nbo=0 Noov=0 OOV=0.00%
+# Calculating perplexity for the bigram model of the test set #
+%% Nw=13198 PP=16.14 PPwp=0.00 Nbo=366 Noov=0 OOV=0.00%
