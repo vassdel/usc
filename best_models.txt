@@ -1,6 +1,6 @@
-# test unigram 
+# test
 %WER 52.01 [ 6483 / 12464, 122 ins, 3797 del, 2564 sub ] ./exp/mono/decode_test//wer_7_0.0
 
-# dev unigram
+# dev
 %WER 52.10 [ 2502 / 4802, 68 ins, 1390 del, 1044 sub ] ./exp/mono/decode_dev//wer_7_0.0
 
