@@ -1,9 +1,9 @@
-# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c exp/mono/decode_dev/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=exp/mono/graph_nosp_tgpr/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- exp/mono/graph_nosp_tgpr/words.txt | cat > exp/mono/decode_dev/scoring_kaldi/penalty_1.0/11.txt 
-# Started at Sun May  5 04:59:27 EEST 2024
+# lattice-scale --inv-acoustic-scale=11 "ark:gunzip -c ./exp/mono/decode_dev//lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- | lattice-best-path --word-symbol-table=./data/lang/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- ./data/lang/words.txt | cat > ./exp/mono/decode_dev//scoring_kaldi/penalty_1.0/11.txt 
+# Started at Sun May  5 06:29:34 EEST 2024
 #
+lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c ./exp/mono/decode_dev//lat.*.gz|' ark:- 
 lattice-add-penalty --word-ins-penalty=1.0 ark:- ark:- 
-lattice-best-path --word-symbol-table=exp/mono/graph_nosp_tgpr/words.txt ark:- ark,t:- 
-lattice-scale --inv-acoustic-scale=11 'ark:gunzip -c exp/mono/decode_dev/lat.*.gz|' ark:- 
+lattice-best-path --word-symbol-table=./data/lang/words.txt ark:- ark,t:- 
 LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:99) For utterance f1_002, best cost 104.679 + 2821.35 = 2926.03 over 377 frames.
 f1_002 jh ey ng ey er m r m aa iy r r ng hh r 
 LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:99) For utterance f1_014, best cost 93.7144 + 2597.75 = 2691.47 over 356 frames.
@@ -304,5 +304,5 @@ LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:99) For utt
 m3_452 sil iy l eh n aa ch w aa er k ao sh r ah t r l zh 
 LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:124) Overall cost per frame is 7.76295 = 0.270608 [graph] + 7.49235 [acoustic] over 67105 frames.
 LOG (lattice-best-path[5.5.1126~1-8c451]:main():lattice-best-path.cc:128) Done 148 lattices, failed for 0
-# Accounting: time=18 threads=1
-# Ended (code 0) at Sun May  5 04:59:45 EEST 2024, elapsed time 18 seconds
+# Accounting: time=15 threads=1
+# Ended (code 0) at Sun May  5 06:29:49 EEST 2024, elapsed time 15 seconds

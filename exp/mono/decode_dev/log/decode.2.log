@@ -1,9 +1,9 @@
 # gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_nosp_tgpr/words.txt exp/mono/final.mdl exp/mono/graph_nosp_tgpr/HCLG.fst "ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split4/2/utt2spk scp:data/dev/split4/2/cmvn.scp scp:data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark:|gzip -c > exp/mono/decode_dev/lat.2.gz" 
-# Started at Sun May  5 04:55:27 EEST 2024
+# Started at Sun May  5 06:09:23 EEST 2024
 #
 gmm-latgen-faster --max-active=7000 --beam=13.0 --lattice-beam=6.0 --acoustic-scale=0.083333 --allow-partial=true --word-symbol-table=exp/mono/graph_nosp_tgpr/words.txt exp/mono/final.mdl exp/mono/graph_nosp_tgpr/HCLG.fst 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split4/2/utt2spk scp:data/dev/split4/2/cmvn.scp scp:data/dev/split4/2/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark:|gzip -c > exp/mono/decode_dev/lat.2.gz' 
-apply-cmvn --utt2spk=ark:data/dev/split4/2/utt2spk scp:data/dev/split4/2/cmvn.scp scp:data/dev/split4/2/feats.scp ark:- 
 add-deltas ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/dev/split4/2/utt2spk scp:data/dev/split4/2/cmvn.scp scp:data/dev/split4/2/feats.scp ark:- 
 f5_002 ch ey m iy p er m ao m ah iy b eh w k ng hh r d 
 LOG (gmm-latgen-faster[5.5.1126~1-8c451]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5_002 is -7.43435 over 381 frames.
 f5_014 b l w r l ey n er dh l 
@@ -100,8 +100,8 @@ LOG (gmm-latgen-faster[5.5.1126~1-8c451]:RebuildRepository():determinize-lattice
 WARNING (gmm-latgen-faster[5.5.1126~1-8c451]:CheckMemoryUsage():determinize-lattice-pruned.cc:316) Did not reach requested beam in determinize-lattice: size exceeds maximum 50000000 bytes; (repo,arcs,elems) = (33844224,594368,15606000), after rebuilding, repo size was 26481120, effective beam was 4.24534 vs. requested beam 6
 WARNING (gmm-latgen-faster[5.5.1126~1-8c451]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:363) Determinization finished earlier than the beam for utterance f5_452
 LOG (gmm-latgen-faster[5.5.1126~1-8c451]:DecodeUtteranceLatticeFaster():decoder-wrappers.cc:375) Log-like per frame for utterance f5_452 is -7.47363 over 413 frames.
-LOG (gmm-latgen-faster[5.5.1126~1-8c451]:main():gmm-latgen-faster.cc:176) Time taken 103.454s: real-time factor assuming 100 frames/sec is 0.617154
+LOG (gmm-latgen-faster[5.5.1126~1-8c451]:main():gmm-latgen-faster.cc:176) Time taken 76.8237s: real-time factor assuming 100 frames/sec is 0.458293
 LOG (gmm-latgen-faster[5.5.1126~1-8c451]:main():gmm-latgen-faster.cc:179) Done 37 utterances, failed for 0
 LOG (gmm-latgen-faster[5.5.1126~1-8c451]:main():gmm-latgen-faster.cc:181) Overall log-likelihood per frame is -7.2971 over 16763 frames.
-# Accounting: time=104 threads=1
-# Ended (code 0) at Sun May  5 04:57:11 EEST 2024, elapsed time 104 seconds
+# Accounting: time=77 threads=1
+# Ended (code 0) at Sun May  5 06:10:40 EEST 2024, elapsed time 77 seconds

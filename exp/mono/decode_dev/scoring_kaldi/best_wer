@@ -1,1 +1,1 @@
-%WER 52.10 [ 2502 / 4802, 68 ins, 1390 del, 1044 sub ] exp/mono/decode_dev/wer_7_0.0
+%WER 52.10 [ 2502 / 4802, 68 ins, 1390 del, 1044 sub ] ./exp/mono/decode_dev//wer_7_0.0

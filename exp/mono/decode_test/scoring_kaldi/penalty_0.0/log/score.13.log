@@ -1,5 +1,5 @@
-# cat exp/mono/decode_test/scoring_kaldi/penalty_0.0/13.txt | compute-wer --text --mode=present ark:exp/mono/decode_test/scoring_kaldi/test_filt.txt ark,p:- >& exp/mono/decode_test/wer_13_0.0 
-# Started at Sun May  5 05:08:00 EEST 2024
+# cat ./exp/mono/decode_test//scoring_kaldi/penalty_0.0/13.txt | compute-wer --text --mode=present ark:./exp/mono/decode_test//scoring_kaldi/test_filt.txt ark,p:- >& ./exp/mono/decode_test//wer_13_0.0 
+# Started at Sun May  5 06:24:19 EEST 2024
 #
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sun May  5 05:08:00 EEST 2024, elapsed time 0 seconds
+# Ended (code 0) at Sun May  5 06:24:19 EEST 2024, elapsed time 0 seconds

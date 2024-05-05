@@ -1,5 +1,5 @@
 # gunzip -c exp/mono/decode_test/depth_tmp.*.gz | steps/diagnostic/analyze_lattice_depth_stats.py exp/mono/graph_nosp_tgpr exp/mono/decode_test/ali_frame_tmp.gz 
-# Started at Sun May  5 05:05:56 EEST 2024
+# Started at Sun May  5 06:17:13 EEST 2024
 #
 The total amount of data analyzed assuming 100 frames per second is 0.4 hours
 Overall, lattice depth (10,50,90-percentile)=(9,64,855) and mean=375.9
@@ -36,4 +36,4 @@ Phone ng_S accounts for 0.8% of frames, with lattice depth (10,50,90-percentile)
 Phone jh_S accounts for 0.7% of frames, with lattice depth (10,50,90-percentile)=(22,103,1034) and mean=458.1
 Phone ow_S accounts for 0.6% of frames, with lattice depth (10,50,90-percentile)=(27,103,996) and mean=353.9
 # Accounting: time=0 threads=1
-# Ended (code 0) at Sun May  5 05:05:56 EEST 2024, elapsed time 0 seconds
+# Ended (code 0) at Sun May  5 06:17:13 EEST 2024, elapsed time 0 seconds

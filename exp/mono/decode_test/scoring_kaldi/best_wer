@@ -1,1 +1,1 @@
-%WER 43.15 [ 5378 / 12464, 172 ins, 2571 del, 2635 sub ] ./exp/mono/decode_test//wer_7_0.0
+%WER 52.01 [ 6483 / 12464, 122 ins, 3797 del, 2564 sub ] ./exp/mono/decode_test//wer_7_0.0
